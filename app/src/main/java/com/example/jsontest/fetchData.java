@@ -15,6 +15,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class fetchData extends AsyncTask<Void,Void,Void> {
+    /*Many of these variables could be declared inside doInBackground, but were declared outside
+    for testing purposes*/
     String data ="";
     String dataParsed = "";
     String singleParsed ="";
@@ -28,6 +30,7 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         try {
+            // All ArcGIS query details integrated into this URL.
             URL url = new URL("https://services1.arcgis.com/ISZ89Z51ft1G16OK/ArcGIS/rest/services/COVID19_WI/FeatureServer/10/query?where=GEO+%3D+%27County%27&objectIds=&time=&resultType=none&outFields=NAME%2C+POSITIVE&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=LoadDttm+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();

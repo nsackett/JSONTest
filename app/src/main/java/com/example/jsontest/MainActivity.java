@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Uses fetchData to display list of WI Counties and number of positive Covid-19 cases inside basic
+ * activity. Used to test/debug complex parsing of JSON from DHS website.
+ */
 public class MainActivity extends AppCompatActivity {
     Button click;
     public  static TextView data;
